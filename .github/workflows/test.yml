@@ -10,6 +10,6 @@ jobs: #jobs can be multiple and one job is not dependent on another job
         with: #to specify version
           node-version: '14.17.0'
       - name: Build the project
-        run: yarn buil
+        run: yarn build
       - name: Setup finish
         run: echo "hurray!!"
