@@ -9,6 +9,9 @@ jobs: #jobs can be multiple and one job is not dependent on another job
       - uses: actions/setup-node@v2
         with: #to specify version
           node-version: '14.17.0'
+
+      - name: Install node_modules
+        run: npm i
       - name: Build the project
         run: npm run build
       - name: Setup finish
