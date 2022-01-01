@@ -9,4 +9,7 @@ jobs: #jobs can be multiple and one job is not dependent on another job
       - uses: actions/setup-node@v2
         with: #to specify version
           node-version: '14.17.0'
-      - run: node -v
+      - name: Build the project
+        run: yarn buil
+      - name: Setup finish
+        run: echo "hurray!!"
