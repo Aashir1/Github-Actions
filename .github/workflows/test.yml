@@ -5,5 +5,5 @@ jobs: #jobs can be multiple and one job is not dependent on another job
   print-hello-world:
     run-on: ubuntu-latest
     steps: #one job can have multiple steps and its array because we want run it sequentially
-      - echo "!!!!!!!!!!!!!!!!!! hello world !!!!!!!!!!!!!!!!!!"
-      - echo "this is second step"
+      - run: echo "!!!!!!!!!!!!!!!!!! hello world !!!!!!!!!!!!!!!!!!"
+      - run: echo "this is second step"
