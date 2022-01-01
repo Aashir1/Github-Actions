@@ -6,3 +6,4 @@ jobs: #jobs can be multiple and one job is not dependent on another job
     runs-on: ubuntu-latest
     steps: #one job can have multiple steps and its array because we want run it sequentially
       - uses: actions/checkout@v2
+      - run: tree
