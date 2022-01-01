@@ -5,5 +5,8 @@ jobs: #jobs can be multiple and one job is not dependent on another job
   build-app:
     runs-on: ubuntu-latest
     steps: #one job can have multiple steps and its array because we want run it sequentially
-      - uses: actions/checkout@v2
-      - run: tree
+      - uses: actions/checkout@v2 #to checkout repo
+      - uses: actions/setup-node@v2
+        with: #to specify version
+          node-version: '14.17.0'
+      - run: node -v
