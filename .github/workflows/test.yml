@@ -7,3 +7,8 @@ jobs: #jobs can be multiple and one job is not dependent on another job
     steps: #one job can have multiple steps and its array because we want run it sequentially
       - run: echo "!!!!!!!!!!!!!!!!!! hello world !!!!!!!!!!!!!!!!!!"
       - run: echo "this is second step"
+  print-hello-world2:
+    runs-on: ubuntu-latest
+    steps: #one job can have multiple steps and its array because we want run it sequentially
+      - run: echo "!!!!!!!!!!!!!!!!!! hello world !!!!!!!!!!!!!!!!!!"
+      - run: echo "this is second step"
