@@ -14,10 +14,13 @@ jobs: #jobs can be multiple and one job is not dependent on another job
           run: yarn
         - name: Build the project
           run: yarn build
+        - name: Sets the vercel env
+          run: |
+            cd build
+            mkdir .vercel
+            touch project.json
+            echo '{"projectId":"prj_Q7LuQlCUYCvhlLp6tTuqcZFYdH9t","orgId":"V0CF3Az7DlLOSRxqdOA6O1xL"}' > project.json
         - name: Deployint the project
-          env: 
-            VERCEL_ORG_ID: V0CF3Az7DlLOSRxqdOA6O1xL
-            VERCEL_PROJECT_ID: prj_YI5pPZQLqud9DxRWPae31aief2gu
           run: yarn deploy
         - name: Setup finish
           run: echo "hurray!!"
