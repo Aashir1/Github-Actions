@@ -30,3 +30,9 @@ jobs: #jobs can be multiple and one job is not dependent on another job
         - name: Setup finish
           run: echo "hurray!!"
 
+    test-app:
+        needs: build-app #now its gonna wait for build-app job to finished. 
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "YOLO"
+
