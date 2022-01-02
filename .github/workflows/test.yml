@@ -4,6 +4,10 @@ on: [push] #when this particular action should run
 jobs: #jobs can be multiple and one job is not dependent on another job
     build-app:
         runs-on: ubuntu-latest
+        env:
+            VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}  
+            VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}  
+            VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} 
         steps: #one job can have multiple steps and its an array because we want run it sequentially
         - uses: actions/checkout@v2 #to checkout repo
         - uses: actions/setup-node@v2
@@ -20,8 +24,8 @@ jobs: #jobs can be multiple and one job is not dependent on another job
             mkdir .vercel
             cd .vercel
             touch project.json
-            echo '{"projectId":"prj_Q7LuQlCUYCvhlLp6tTuqcZFYdH9t","orgId":"V0CF3Az7DlLOSRxqdOA6O1xL"}' > project.json
-        - name: Deployint the project
+            echo "{\"projectId\":\"$VERCEL_PROJECT_ID\",\"orgId\":\"$VERCEL_ORG_ID\"}" > project.json
+        - name: Deployint the project 
           run: yarn deploy
         - name: Setup finish
           run: echo "hurray!!"
