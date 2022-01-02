@@ -10,6 +10,9 @@ function App() {
 				<p>
 					Edit <code>src/App.jsx</code> and save to reload!
 				</p>
+				<p>
+                    This is so awesome :)
+				</p>
 			</header>
 		</div>
 	)
