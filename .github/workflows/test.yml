@@ -18,6 +18,7 @@ jobs: #jobs can be multiple and one job is not dependent on another job
           run: |
             cd build
             mkdir .vercel
+            cd .vercel
             touch project.json
             echo '{"projectId":"prj_Q7LuQlCUYCvhlLp6tTuqcZFYdH9t","orgId":"V0CF3Az7DlLOSRxqdOA6O1xL"}' > project.json
         - name: Deployint the project
